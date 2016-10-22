@@ -214,10 +214,6 @@ $.ajax({
        console.log('load )) ');
     }
 });
-
-   
-
-
  });
 
 
@@ -282,12 +278,218 @@ var str=mainarrGroupJSON.shift();
        console.log("ol989");
     });
 
+//-----------------   read XML site 2
+$("#loadG4").click(function(){
+
+
+
+console.log("loadgroupb.php");
+ 
+$.ajax({
+        type: "GET",
+
+    url: "php_parse_catalog/read_category_xml.php",
+    success: function(data) {
+   mainarrGroupJSON=JSON.parse(data);
+
+      
+      console.log('length: ' + mainarrGroupJSON.length);
+       console.log('load )) ');
+    }
+});
+ });
+
+
+// go one cat from array   site 2 from site map array
+
+          $("#startG4").click(function(){
+
+var intervalID = window.setInterval(myCallback, 5000);
+
+/*var intervalID = window.setTimeout (myCallback, 300);*/
+function myCallback() {
+
+    if(mainarrGroupJSON.length==0){
+        window.clearInterval(intervalID);
+        return;
+    }
+  // Your code here
+var str=mainarrGroupJSON.shift();
+  var jqxhr = $.post( "php_parse_catalog/scanx_cat2.php", { param: str, time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainarrGroupJSON.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
+
+
+}   
+       console.log("ol989");
+    });
+
+
+// go one cat from array   site 3  from load new type xml to array array
+
+ //-----------------   read XML site 2
+$("#loadG5").click(function(){
+
+
+
+console.log("loadgroupb.php");
+ 
+$.ajax({
+        type: "GET",
+
+    url: "php_parse_catalog/read_category3_xml.php",
+    success: function(data) {
+   mainarrGroupJSON=JSON.parse(data);
+
+      
+      console.log('length: ' + mainarrGroupJSON.length);
+       console.log('load )) ');
+    }
+});
+ });
 
 
 
 
+          $("#startG5").click(function(){
+
+var intervalID = window.setInterval(myCallback, 2500);
+
+/*var intervalID = window.setTimeout (myCallback, 300);*/
+function myCallback() {
+
+    if(mainarrGroupJSON.length==0){
+        window.clearInterval(intervalID);
+        return;
+    }
+  // Your code here
+var str=mainarrGroupJSON.shift();
+  var jqxhr = $.post( "php_parse_catalog/scanx_cat3.php", { param: str, time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainarrGroupJSON.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
 
 
+}   
+       console.log("ol989");
+    });
+
+
+
+/////       site 4 create empty arr  11000
+$("#loadG6").click(function(){
+
+
+
+console.log("loadgroupb.php");
+ 
+      mainarrGroupJSON=new Array(11000);    
+      console.log('length: ' + mainarrGroupJSON.length);
+       console.log('arrr create' );
+       });
+
+
+
+          $("#startG6").click(function(){
+
+var intervalID = window.setInterval(myCallback, 1000);
+
+/*var intervalID = window.setTimeout (myCallback, 300);*/
+function myCallback() {
+
+    if(mainarrGroupJSON.length==0){
+        window.clearInterval(intervalID);
+        return;
+    }
+  // Your code here
+var str=mainarrGroupJSON.shift();
+
+  var jqxhr = $.post( "php_parse_catalog/scanx_cat4.php", { param: mainarrGroupJSON.length, time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainarrGroupJSON.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
+
+
+}   
+       console.log("ol989");
+    });
+
+
+//     site 5
+$("#loadG7").click(function(){
+
+
+
+console.log("loadgroupb.php");
+ 
+$.ajax({
+        type: "GET",
+
+    url: "php_parse_catalog/read_category5_xml.php",
+    success: function(data) {
+      console.log('before ok');
+   mainarrGroupJSON=JSON.parse(data);
+
+      
+      console.log('length: ' + mainarrGroupJSON.length);
+       console.log('load ');
+    }
+});
+ });
+
+
+//      5 site
+
+
+$("#startG7").click(function(){
+
+
+
+console.log("loadgroupb.php");
+ 
+$.ajax({
+        type: "GET",
+
+    url: "php_parse_catalog/scanx_cat5.php",
+    success: function(data) {
+   mainarrGroupJSON=JSON.parse(data);
+
+    
+     console.log(data);
+    }
+});
+ });
 
 
 
@@ -340,9 +542,31 @@ var str=mainarrGroupJSON.shift();
 
                                   <section>
                         <h2>Site 2</h2>
-                        <button id="loadG4">Write all cat</button>
-<button id="loadG">Load_cat main pag</button>
-<button id="startG4">Start one cat</button>
+                        <button id="loadG4">Read xml</button>
+                       <!--  <button id="loadG">Load_cat main pag</button> -->
+                        <button id="startG4">Start one cat</button>
+
+                    </section>
+                                                      <section>
+                        <h2>Site 3</h2>
+                        <button id="loadG5">Load xml to csv</button>
+                        <!-- <button id="loadGcsv">Load_csv</button> -->
+                        <button id="startG5">Start one cat</button>
+
+                    </section>
+                                                               <section>
+                        <h2>Site 4</h2>
+                        <button id="loadG6">create arr 1 - 11000</button>
+                        <!-- <button id="loadGcsv">Load_csv</button> -->
+                        <button id="startG6">Start one cat</button>
+
+                    </section>
+                                                                      <section>
+                        <h2>Site 5</h2>
+                        <button id="loadG7">Load manual urls</button>
+                        <!-- <button id="loadGcsv">Load_csv</button> -->
+                        <button id="startG7">Start one cat</button>
+                        
 
                     </section>
                     <section>

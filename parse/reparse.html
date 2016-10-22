@@ -1,0 +1,776 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script>
+$(document).ready(function(){
+        var mainArr =[];
+        var mainarrGroupJSON;
+
+         $("#start111").click(function(){
+
+
+  
+
+         });
+
+
+
+
+
+
+    $("#start_parse_url").click(function(){
+
+var intervalID = window.setInterval(myCallback, 5000);
+
+/*var intervalID = window.setTimeout(myCallback, 100);*/
+
+function myCallback() {
+
+    if(mainArr.length==0){
+        window.clearInterval(intervalID);
+        return;
+    }
+  // Your code here
+var str=mainArr.shift();
+  var jqxhr = $.post( "php_parket_reparse/scanx_bread.php", { param: str, time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainArr.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
+
+
+}   
+       console.log("ol");
+    });
+
+
+// -----------
+    $("#parse_url_filter").click(function(){
+
+var intervalID = window.setInterval(myCallback, 5000);
+
+/*var intervalID = window.setTimeout(myCallback, 100);*/
+
+function myCallback() {
+
+    if(mainArr.length==0){
+        window.clearInterval(intervalID);
+        return;
+    }
+  // Your code here
+var str=mainArr.shift();
+  var jqxhr = $.post( "php_parket_reparse/scanx_filters.php", { param: str, time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainArr.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
+
+
+}   
+       console.log("ol");
+    });
+
+
+
+// -----------
+    $("#parse_url_filter2").click(function(){
+
+var intervalID = window.setInterval(myCallback, 5000);
+
+/*var intervalID = window.setTimeout(myCallback, 100);*/
+
+function myCallback() {
+
+    if(mainArr.length==0){
+        window.clearInterval(intervalID);
+        return;
+    }
+  // Your code here
+var str=mainArr.shift();
+  var jqxhr = $.post( "php_parket_reparse/scanx_price.php", { param: str, time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainArr.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
+
+
+}   
+       console.log("ol");
+    });
+
+
+
+
+// -----------
+    $("#parse_urls_cat_des").click(function(){
+
+var intervalID = window.setInterval(myCallback, 5000);
+
+/*var intervalID = window.setTimeout(myCallback, 100);*/
+
+function myCallback() {
+
+    if(mainArr.length==0){
+        window.clearInterval(intervalID);
+        return;
+    }
+  // Your code here
+var str=mainArr.shift();
+  var jqxhr = $.post( "php_parket_reparse/parse_urls_cat_des.php", { param: str, time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainArr.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
+
+
+}   
+       console.log("ol");
+    });
+// -----------
+    $("#parse_url_image").click(function(){
+
+var intervalID = window.setInterval(myCallback, 5000);
+
+/*var intervalID = window.setTimeout(myCallback, 100);*/
+
+function myCallback() {
+
+    if(mainArr.length==0){
+        window.clearInterval(intervalID);
+        return;
+    }
+  // Your code here
+var str=mainArr.shift();
+  var jqxhr = $.post( "php_parket_reparse/scanx_image.php", { param: str, time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainArr.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
+
+
+}   
+       console.log("ol");
+    });
+
+// -----------
+    $("#load_imgdd").click(function(){
+
+/*var intervalID = window.setInterval(myCallback, 5000);*/
+
+var intervalID = window.setTimeout(myCallback, 100);
+
+function myCallback() {
+
+    if(mainArr.length==0){
+        window.clearInterval(intervalID);
+        return;
+    }
+  // Your code here
+var str=mainArr.shift();
+  var jqxhr = $.post( "php_parket_reparse/load_imgddd.php", { param: str, time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainArr.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
+
+
+}   
+       console.log("ol");
+    });
+
+// -----------
+    $("#parse_url_images").click(function(){
+
+var intervalID = window.setInterval(myCallback, 5000);
+
+/*var intervalID = window.setTimeout(myCallback, 100);*/
+
+function myCallback() {
+
+    if(mainArr.length==0){
+        window.clearInterval(intervalID);
+        return;
+    }
+  // Your code here
+var str=mainArr.shift();
+  var jqxhr = $.post( "php_parket_reparse/scanx_images.php", { param: str, time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainArr.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
+
+
+}   
+       console.log("ol");
+    });
+
+    // -----------
+    $("#write_image").click(function(){
+
+var intervalID = window.setInterval(myCallback, 5000);
+
+/*var intervalID = window.setTimeout(myCallback, 100);*/
+
+function myCallback() {
+
+    if(mainArr.length==0){
+        window.clearInterval(intervalID);
+        return;
+    }
+  // Your code here
+var str=mainArr.shift();
+  var jqxhr = $.post( "php_parket_reparse/write_image.php", { param: str, time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainArr.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
+
+
+}   
+       console.log("ol");
+    });
+
+
+//-----------------
+$("#load_urls").click(function(){
+
+
+
+ 
+$.ajax({
+        type: "GET",
+    /*url: "php5/sitemapL.xml",*/
+    url: "php_parket_reparse/load_urls.php",
+    success: function(xml) {
+
+mainArr = jQuery.parseJSON(xml);
+
+      
+       console.log('load )) '+ mainArr.length);
+    }
+});
+
+    });
+
+//-----------------
+
+$("#load_img").click(function(){
+
+
+
+ 
+$.ajax({
+        type: "GET",
+    /*url: "php5/sitemapL.xml",*/
+   url: "php_parket_reparse/load_img.php",
+    success: function(xml) {
+
+mainArr = jQuery.parseJSON(xml);
+
+      
+       console.log('load )) '+ mainArr.length);
+    }
+});
+
+    });
+
+
+
+
+
+//-----------------
+$("#create_filters").click(function(){
+
+
+
+ 
+$.ajax({
+        type: "GET",
+    /*url: "php5/sitemapL.xml",*/
+    url: "php_parket_reparse/create_filters.php",
+    success: function(xml) {
+
+mainArr = jQuery.parseJSON(xml);
+
+      
+       console.log('load )) '+ mainArr.length);
+    }
+});
+
+    });
+
+//-----------------
+$("#create_filters2").click(function(){
+
+
+
+ 
+$.ajax({
+        type: "GET",
+    /*url: "php5/sitemapL.xml",*/
+    url: "php_parket_reparse/create_price_des.php",
+    success: function(xml) {
+
+mainArr = jQuery.parseJSON(xml);
+
+      
+       console.log('load )) '+ mainArr.length);
+    }
+});
+
+    });
+
+//-----------------
+$("#load_urls_des").click(function(){
+
+
+
+ 
+$.ajax({
+        type: "GET",
+    /*url: "php5/sitemapL.xml",*/
+    url: "php_parket_reparse/load_urls_filter.php",
+    success: function(xml) {
+
+mainArr = jQuery.parseJSON(xml);
+
+      
+       console.log('load )) '+ mainArr.length);
+    }
+});
+
+    });
+
+
+//-----------------
+$("#load_urls_cat_des").click(function(){
+
+
+
+ 
+$.ajax({
+        type: "GET",
+    /*url: "php5/sitemapL.xml",*/
+    url: "php_parket_reparse/load_urls_cat_des.php",
+    success: function(xml) {
+
+mainArr = jQuery.parseJSON(xml);
+
+      
+       console.log('load )) '+ mainArr.length);
+    }
+});
+
+    });
+//-----------------
+$("#load_urls_filter").click(function(){
+
+
+
+ 
+$.ajax({
+        type: "GET",
+    /*url: "php5/sitemapL.xml",*/
+    url: "php_parket_reparse/load_urls_filter.php",
+    success: function(xml) {
+
+mainArr = jQuery.parseJSON(xml);
+
+      
+       console.log('load )) '+ mainArr.length);
+    }
+});
+
+    });
+
+
+
+$("#load_cat").click(function(){
+
+
+
+ 
+$.ajax({
+        type: "POST",
+    url: "php_parket_reparse/create_cat.php",
+    success: function(xml) {
+
+mainArr = jQuery.parseJSON(xml);
+
+      
+       console.log('load )) '+ mainArr.length);
+    }
+});
+
+    });
+
+//------------
+
+
+
+$("#load_cat2").click(function(){
+
+
+
+ 
+$.ajax({
+        type: "POST",
+    url: "php_parket_reparse/create_cat.php",
+    success: function(xml) {
+
+/*mainArr = jQuery.parseJSON(xml);
+
+      
+       console.log('load )) '+ mainArr.length);*/
+    }
+});
+
+    });
+$("#rem_dup").click(function(){
+
+
+
+ 
+$.ajax({
+        type: "POST",
+    url: "php_parket_reparse/rem_dup.php",
+    success: function(xml) {
+
+/*mainArr = jQuery.parseJSON(xml);
+
+      
+       console.log('load )) '+ mainArr.length);*/
+    }
+});
+
+    });
+
+
+
+
+$("#filltxt").click(function(){
+$.ajax({
+        type: "GET",
+    url: "php_parket/filltxt.php",
+    success: function(xml) {
+
+mainArr = jQuery.parseJSON(xml);
+
+      
+       console.log('load )) '+ mainArr.length);
+    }
+});
+
+    });
+$("#rem_word").click(function(){
+$.ajax({
+        type: "GET",
+    url: "php_parket/r_word.php",
+    success: function(xml) {
+
+mainArr = jQuery.parseJSON(xml);
+
+      
+       console.log('load )) '+ mainArr.length);
+    }
+});
+
+    });
+
+
+
+////       GROUP  B
+
+       var mainArr =[];
+
+    $("#startG").click(function(){
+
+var intervalID2 = window.setInterval(myCallback2, 5000);
+
+function myCallback2() {
+
+    if(mainarrGroupJSON.length==0){
+        window.clearInterval(intervalID2);
+        return;
+    }
+  // Your code here
+// Assign handlers immediately after making the request,
+// and remember the jqxhr object for this request
+           //   parse json
+/*   for (var i = j.length - 1; i >= 0; i--) {
+            console.log( j[i]);
+           arr=[];
+            for(var x in j[i]){
+              arr.push(x);       //  key
+              arr.push('http://light-glass.com.ua'+j[i][x]);  //  path
+              
+                        }
+                      console.log(arr[0]); 
+                      console.log(arr[1]);  
+
+    
+        }*/
+
+var jqxhr = $.post( "php5/scanxgroup.php", { param: mainarrGroupJSON.shift(), time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainarrGroupJSON.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
+}
+
+     
+       console.log("ol");
+    });
+
+
+//-----------------
+$("#loadG").click(function(){
+
+
+
+console.log("loadgroupb.php");
+ 
+$.ajax({
+        type: "GET",
+
+    url: "php5/loadgroupb.php",
+    success: function(data) {
+   mainarrGroupJSON=JSON.parse(data);
+
+
+      console.log(mainarrGroupJSON);
+       console.log('load )) ');
+    }
+});
+
+   
+
+
+ });
+
+
+});
+</script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <h1 class="title">h1.title</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#">nav ul li a</a></li>
+                        <li><a href="#">nav ul li a</a></li>
+                        <li><a href="#">nav ul li a</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+
+                <article>
+                    <header>
+            
+
+
+<button id="start">Start</button>
+<button id="load">Load</button>
+<button id="filltxt">filltxt</button>
+<button id="rem_word">rem_word</button>
+<select id="repl">
+  <option>Террасная доска Тик гладкая/</option>
+  <option>Пункт 2</option>
+</select>
+
+                    </header>
+                    <section>
+                        <h2>Goup B 10002</h2>
+
+<button id="startG">Start</button>
+<button id="loadG">Load</button>
+
+                    </section>
+                    <section>
+                       <h2>Re parse</h2>
+                                  <header>
+            
+
+
+<button id="load_urls">load urls</button>
+<button id="start_parse_url">parse_urls</button>
+
+<hr>
+<button id="load_cat">Create_cat</button>
+<button id="load_cat2">Create_cat debag</button>
+<button id="rem_dup">Remove duplikate</button>
+
+<hr>
+<p>filters</p>
+<button id="load_urls_filter">load_urls_filter 1</button>
+<button id="parse_url_filter">parse_url_filter 2</button>
+<button id="create_filters">create_filters 3</button>
+
+
+<hr>
+<p>price desc</p>
+<button id="load_urls_des">load_urls_price_des1</button>
+<button id="parse_url_filter2">parse_url_price des 2</button>
+<button id="create_filters2">create_filters_price_decs 3</button>
+
+<hr>
+<p>image</p>
+
+<button id="parse_url_image">parse_url_image 2</button>
+<button id="parse_url_images">parse_url_images 2a</button>
+<button id="create_filters2">create_filters_price_decs 3</button>
+<button id="load_img">load_img 3</button>
+ <button id="write_image">write_image</button>
+  <button id="write_images">write_images</button>
+
+
+  <hr>
+<p>cat des</p>
+<button id="load_urls_cat_des">load_urls_cat_des 1</button>
+<button id="parse_urls_cat_des">parse_urls_cat_des 2</button>
+
+                    </header> 
+
+
+                    </section>
+                    <footer>
+                     <!--    <h3>article footer h3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p> -->
+                    </footer>
+                </article>
+
+                <aside>
+                    <h3>aside</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+                </aside>
+
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+        <div class="footer-container">
+            <footer class="wrapper">
+                <h3>footer</h3>
+            </footer>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>

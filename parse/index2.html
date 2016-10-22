@@ -251,9 +251,9 @@ $.ajax({
 
           $("#startG3").click(function(){
 
-/*var intervalID = window.setInterval(myCallback, 5000);
-*/
-var intervalID = window.setTimeout (myCallback, 300);
+var intervalID = window.setInterval(myCallback, 5000);
+
+/*var intervalID = window.setTimeout (myCallback, 300);*/
 function myCallback() {
 
     if(mainarrGroupJSON.length==0){
@@ -331,10 +331,18 @@ var str=mainarrGroupJSON.shift();
 
                     </header>
                     <section>
-                        <h2>Goup B 10002</h2>
+                        <h2>Site 1</h2>
                         <button id="loadG3">Write all cat</button>
 <button id="loadG">Load_cat main pag</button>
 <button id="startG3">Start one cat</button>
+
+                    </section>
+
+                                  <section>
+                        <h2>Site 2</h2>
+                        <button id="loadG4">Write all cat</button>
+<button id="loadG">Load_cat main pag</button>
+<button id="startG4">Start one cat</button>
 
                     </section>
                     <section>

@@ -491,6 +491,151 @@ $.ajax({
 });
  });
 
+//---------------- 6 site 
+
+
+$("#loadG18").click(function(){
+
+
+
+console.log("loadgroupb.php");
+ 
+$.ajax({
+        type: "GET",
+
+    url: "php_parse_catalog/scanx_main_cat_6.php",
+    success: function(data) {
+      console.log('before ok');
+   mainarrGroupJSON=JSON.parse(data);
+
+      
+      console.log('length: ' + mainarrGroupJSON.length);
+       console.log('load ');
+    }
+});
+ });
+
+// main cat load
+$("#loadG25").click(function(){
+
+
+
+console.log("loadgroupb.php");
+ 
+$.ajax({
+        type: "GET",
+
+    url: "php_parse_catalog/load_main_cat_6.php",
+    success: function(data) {
+      console.log('before ok');
+   mainarrGroupJSON=JSON.parse(data);
+
+      
+      console.log('length: ' + mainarrGroupJSON.length);
+       console.log('load ');
+    }
+});
+ }); 
+
+
+
+
+          $("#loadG27").click(function(){
+
+var intervalID = window.setInterval(myCallback, 2000);
+
+/*var intervalID = window.setTimeout (myCallback, 300);*/
+function myCallback() {
+
+    if(mainarrGroupJSON.length==0){
+        window.clearInterval(intervalID);
+        return;
+    }
+  // Your code here
+var str=mainarrGroupJSON.shift();
+
+  var jqxhr = $.post( "php_parse_catalog/scanx_cat27.php", { param: str, time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainarrGroupJSON.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
+
+
+}   
+       console.log("ol989");
+    });
+
+
+
+
+// laod all  urls
+$("#loadG212").click(function(){
+
+
+
+console.log("loadgroupb.php");
+ 
+$.ajax({
+        type: "GET",
+
+    url: "php_parse_catalog/load_all_urls_6.php",
+    success: function(data) {
+      console.log('before ok');
+   mainarrGroupJSON=JSON.parse(data);
+
+      
+      console.log('length: ' + mainarrGroupJSON.length);
+       console.log('load ');
+    }
+});
+ }); 
+
+
+
+          $("#startG999").click(function(){
+
+var intervalID = window.setInterval(myCallback, 2000);
+
+/*var intervalID = window.setTimeout (myCallback, 300);*/
+function myCallback() {
+
+    if(mainarrGroupJSON.length==0){
+        window.clearInterval(intervalID);
+        return;
+    }
+  // Your code here
+var str=mainarrGroupJSON.shift();
+
+  var jqxhr = $.post( "php_parse_catalog/scanx_cat999.php", { param: str, time: "2pm" } , function() {
+  //alert( "success" );
+})
+  .done(function(data) {
+   // alert( "second success" );
+   console.log(data+"  "+mainarrGroupJSON.length);
+
+  })
+  .fail(function() {
+    alert( "error" );
+  })
+  .always(function() {
+   // alert( "finished" );
+});
+
+
+}   
+       console.log("ol989");
+    });
+
+
 
 
 });
@@ -566,6 +711,18 @@ $.ajax({
                         <button id="loadG7">Load manual urls</button>
                         <!-- <button id="loadGcsv">Load_csv</button> -->
                         <button id="startG7">Start one cat</button>
+                        
+
+                    </section>
+
+                                                                                <section>
+                        <h2>Site 6</h2>
+                        <button id="loadG18">write cat urls</button>
+                        <button id="loadG25">Load main cat urls</button>
+                        <button id="loadG27">Write all Urls</button>
+                            <button id="loadG212">Load all Urls</button>
+                        <!-- <button id="loadGcsv">Load_csv</button> -->
+                        <button id="startG999">Start Fin</button>
                         
 
                     </section>

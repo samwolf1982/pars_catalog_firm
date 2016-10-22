@@ -85,8 +85,10 @@ $b1=array();
 /* $name=str_replace('|',"",$name);*/
 /* $name =  iconv(mb_detect_encoding($name, mb_detect_order(), true), "UTF-8", $name); */
 
-$name = iconv("ISO-8859-8", "UTF-8//TRANSLIT", hebrev(iconv("UTF-8", "ISO-8859-8//TRANSLIT", $name)));
+/*$name = iconv("ISO-8859-8", "UTF-8//TRANSLIT", hebrev(iconv("UTF-8", "ISO-8859-8//TRANSLIT", $name)));*/
 
+
+$name =  iconv('UTF-8', 'ISO-8859-1//TRANSLIT//IGNORE',  $name); 
 
 
      $bread1='#listing-email a';

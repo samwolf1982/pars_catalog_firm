@@ -14,7 +14,7 @@ $firephp = FirePHP::getInstance(true);
 
 $count_folder=200;
 $url='http://anfloors.ru';
-$f=["res1/s1_ready.csv","res2/s2_ready.csv","res3/s3_ready.csv","res4/s4_ready.csv","res5/s5_ready.csv"];
+$f=["res1/s1_ready.csv","res2/s2_ready.csv","res3/s3_ready.csv","res4/s4_ready.csv","res5/s5_ready.csv","res6/s6_ready.csv"];
 
 $res="FIN/glue_fin.csv";
 
